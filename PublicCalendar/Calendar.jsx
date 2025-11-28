@@ -36,8 +36,15 @@ function Calendar() {
       </div>
 
       <div>
-        <h1>Selected Country: {ItemCountry || "NONE"}</h1>
+        {/* <h1>Selected Country: {ItemCountry || "NONE"}</h1> */}
+        <input
+          type="text"
+          id="county"
+          placeholder={ItemCountry}
+          readOnly={true}
+        />
       </div>
+      <label htmlFor="county">Selected Country</label>
       <div>
         <ShowHolidaydate selectmoCCA2={itemcca2} />
       </div>

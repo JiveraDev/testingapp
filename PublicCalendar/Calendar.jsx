@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { StrictMode, useState } from "react";
+import { Link } from "react-router-dom";
 import FetchCountry from "./fetchCountry";
 import ShowHolidaydate from "./showHolidaydate";
+import AcordionComponent from "../Accordion/acordioncomponent.jsx";
+import Chatboxpoosition from "../Chatbot/chatboxpoosition.jsx";
+import Firsttcomponent from "../Chatbot/Component/Firsttcomponent.jsx";
 
 function Calendar() {
   const [dropdownItem, setShowDropdownItem] = useState(false);
   const [ItemCountry, setItemCountry] = useState(null);
   const [itemcca2, setitemcaa2] = useState(null);
+  const [showChat, setShowChat] = useState(false);
   console.log(ItemCountry, itemcca2);
   return (
     <>
+      <Link to="/Chatbot/Chatbot">
+        <button className="btn btn-primary">Open chatbot </button>
+      </Link>
+      {/* Chatbot navigation button below */}
       <div
         className="dropdown"
         style={{ width: "200px", height: "50px" }}
@@ -43,11 +52,23 @@ function Calendar() {
           placeholder={ItemCountry}
           readOnly={true}
         />
+        <div style={{ marginTop: "8px" }}></div>
       </div>
       <label htmlFor="county">Selected Country</label>
       <div>
         <ShowHolidaydate selectmoCCA2={itemcca2} />
       </div>
+      {/* Floating chat button + inline chat form */}
+      <Chatboxpoosition
+        isOpen={showChat}
+        onToggle={() => setShowChat((s) => !s)}
+      />
+      {showChat && (
+        <div style={{ position: "fixed", right: 24, bottom: 88, zIndex: 2000 }}>
+          <Firsttcomponent onClose={() => setShowChat(false)} />
+        </div>
+      )}
+      <AcordionComponent />
     </>
   );
 }

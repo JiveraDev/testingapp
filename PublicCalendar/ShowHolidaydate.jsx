@@ -34,52 +34,43 @@ const ShowHolidaydate = ({ selectmoCCA2 }) => {
 
   return (
     <>
-      <h5>this is the holidays</h5>
-      {holidaydata.map((holiday) => {
-        const dateboeen = holiday.date;
+      <div
+        className="card"
+        style={{ width: "300px", maxHeight: "200px", overflow: "auto" }}
+      >
+        <h5>this are the holidays</h5>
+        <div class="card-body">
+          {holidaydata.map((holiday) => {
+            const dateboeen = holiday.observed;
 
-        const [year = "", month = "", day = ""] = dateboeen.split("-");
-        const monthNumber = parseInt(month, 10); // "01" -> 1
-        const monthNames = [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December",
-        ];
+            const [year = "", month = "", day = ""] = dateboeen.split("-");
+            const monthNumber = parseInt(month); // "01" -> 1
+            const monthNames = [
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December",
+            ];
 
-        const monthName = monthNames[monthNumber - 1]; // subtract 1 because array is 0-indexed
+            const monthName = monthNames[monthNumber - 1]; // subtract 1 because array is 0-indexed
 
-        return (
-          <li key={holiday.name}>
-            {monthName}-{day} : {holiday.name}
-          </li>
-        );
-      })}
-
-      {/* {holidaydata.map((holiday) => {
-        const dateStr =
-          holiday.date || holiday.observed || holiday.startDate || "";
-        const [year = "", month = "", day = ""] = dateStr.split("-");
-
-        return (
-          <li key={(holiday.name || "") + dateStr}>
-            <div>{holiday.name}</div>
-            <div>Original date: {dateStr}</div>
-            <div>
-              Year: {year} • Month: {month} • Day: {day}
-            </div>
-          </li>
-        );
-      })} */}
-      {/* <button onClick={() => console.log(holidaydata)}>click to console</button> */}
+            return (
+              <li key={holiday.name}>
+                {monthName} {day} : {holiday.name}
+              </li>
+            );
+          })}
+          {/*<button onClick={() => console.log(holidaydata)}>click to console</button> */}
+        </div>
+      </div>
     </>
   );
 };

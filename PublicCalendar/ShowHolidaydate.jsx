@@ -36,7 +36,12 @@ const ShowHolidaydate = ({ selectmoCCA2 }) => {
     <>
       <div
         className="card"
-        style={{ width: "300px", maxHeight: "200px", overflow: "auto" }}
+        style={{
+          width: "300px",
+          maxHeight: "200px",
+          overflow: "auto",
+          alignItems: "self-start",
+        }}
       >
         <h5>this are the holidays</h5>
         <div class="card-body">

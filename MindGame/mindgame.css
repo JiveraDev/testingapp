@@ -1,0 +1,26 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  width: 420px; /* Adjust as needed */
+  margin: 20px auto;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  color: black;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: fill;
+}

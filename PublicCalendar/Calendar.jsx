@@ -14,10 +14,16 @@ function Calendar() {
   console.log(ItemCountry, itemcca2);
   return (
     <>
-      <Link to="/Chatbot/Chatbot">
-        <button className="btn btn-primary">Open chatbot </button>
-      </Link>
       {/* Chatbot navigation button below */}
+      <Link to="/Chatbot/Chatbot">
+        <button className="btn btn-primary m-1">Open chatbot </button>
+      </Link>
+      <Link to="/CustomHookpage">
+        <button className="btn btn-primary m-1">Open ToDo </button>
+      </Link>
+      <Link to="/MindGame">
+        <button className="btn btn-primary m-1">Open Picture MindGame </button>
+      </Link>
       <div
         className="dropdown"
         style={{ width: "200px", height: "50px" }}

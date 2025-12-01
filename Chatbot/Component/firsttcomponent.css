@@ -28,7 +28,7 @@
 
 .chat-textarea {
   width: 100%;
-  min-height: 90px;
+  max-height: max-content;
   resize: vertical;
   padding: 8px 10px;
   border-radius: 6px;

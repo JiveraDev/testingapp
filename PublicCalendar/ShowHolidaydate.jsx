@@ -7,13 +7,13 @@ const ShowHolidaydate = ({ selectmoCCA2 }) => {
   useEffect(() => {
     console.log("selectmoCCA2 prop received:", selectmoCCA2);
     if (!selectmoCCA2) {
-      console.warn("No country selected");
+      console.log("No country selected");
       return;
     }
 
     const url = `https://holidayapi.com/v1/holidays?pretty&key=d3498b12-7455-4657-86bd-83a48648f7c5&country=${selectmoCCA2}&year=2024`;
 
-    // console.log("Fetching from URL:", url);
+    // log("Fetching from URL:", url);
 
     fetch(url)
       .then((res) => {
